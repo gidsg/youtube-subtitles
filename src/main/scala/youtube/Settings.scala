@@ -5,6 +5,7 @@ import scala.collection.JavaConverters._
 
 trait Settings {
   def config: Config
+  println(config.checkValid(config))
 
   def getString(name: String): Option[String] = if(config.hasPath(name)) { Some(config.getString(name)) } else { None }
   def getStringList(name: String): List[String] = if(config.hasPath(name)) { config.getStringList(name).asScala.toList } else { List.empty}
