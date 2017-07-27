@@ -10,6 +10,7 @@ println("Hello, World!")
   val items = listReq.execute().getItems
   println(items)
 
+  //use item id returned by captions list
   val req = captions.download("Y6HXK1vdgdcx49kZ5e227-0X2IZMdDf8t_GbleN3tqA=").setTfmt("SRT")
   val outputStream  = new FileOutputStream("captionFile.srt")
   req.executeMediaAndDownloadTo(outputStream)
